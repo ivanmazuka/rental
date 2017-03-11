@@ -9,7 +9,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     del = require('del'),
     watch = require('gulp-watch'),
-    uglify = require('gulp-uglifyjs');
+    uglify = require('gulp-uglifyjs'),
+    react = require('gulp-react');
 
 
 // АВТОМАТИЧЕСКОЕ СОХРАНЕНИЕ
@@ -41,6 +42,12 @@ gulp.task('sass', function () {
 // ОЧИСТКА
 gulp.task('clean', function () {
     return del.sync('build');
+});
+
+
+// REACT
+gulp.task('react', function () {
+    return gulp.src();
 });
 
 
