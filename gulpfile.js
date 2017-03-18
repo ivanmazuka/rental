@@ -3,20 +3,18 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     cssmin = require('gulp-cssmin'),
     htmlmin = require('gulp-htmlmin'),
-    imagemin = require('gulp-imagemin'),
-    pngquant = require('imagemin-pngquant'),
-    cache = require('gulp-cache'),
     rename = require('gulp-rename'),
     del = require('del'),
     watch = require('gulp-watch'),
-    uglify = require('gulp-uglifyjs'),
-    react = require('gulp-react');
+    uglify = require('gulp-uglifyjs')
 
 
 // АВТОМАТИЧЕСКОЕ СОХРАНЕНИЕ
 gulp.task('watch', function () {
-    gulp.watch(['application/style/style.sass', 'application/js/script.js'],
-                ['sass', 'js']);
+    gulp.watch(
+        ['application/style/style.sass', 'application/js/script.js'],
+        ['sass', 'js']
+    );
 });
 
 
@@ -42,12 +40,6 @@ gulp.task('sass', function () {
 // ОЧИСТКА
 gulp.task('clean', function () {
     return del.sync('build');
-});
-
-
-// REACT
-gulp.task('react', function () {
-    return gulp.src();
 });
 
 

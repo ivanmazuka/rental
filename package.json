@@ -2,23 +2,19 @@
   "name": "rental",
   "version": "1.0.0",
   "description": "Сайт риэлторской компании из Братска",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://ivan_matcuka@bitbucket.org/polymorphy/rental.git"
+    "url": "git+https://github.com/ivanmazuka/rental.git"
   },
   "author": "Ivan Matcuka",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/polymorphy/rental#readme",
   "devDependencies": {
-    "gulp-cache": "^0.4.6",
     "gulp-cssmin": "^0.1.7",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-imagemin": "^3.1.1",
-    "gulp-react": "^3.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-watch": "^4.3.11"
@@ -27,9 +23,6 @@
     "del": "^2.2.2",
     "gulp-dependency-install": "0.0.8",
     "gulp-install": "^0.6.0",
-    "gulp-uglifyjs": "^0.6.2",
-    "imagemin-pngquant": "^5.0.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "gulp-uglifyjs": "^0.6.2"
   }
 }
