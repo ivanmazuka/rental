@@ -13,6 +13,7 @@
   "author": "Ivan Matcuka",
   "license": "ISC",
   "devDependencies": {
+    "colors.css": "^3.0.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-htmlmin": "^3.0.0",
     "gulp-rename": "^1.2.2",

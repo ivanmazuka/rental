@@ -1,12 +1,18 @@
-﻿// ЦВЕТА
-$purpleLight: #994576
-$purpleDark: #cc6652
-$blueLight: #3e65b3
-$blueDark: #5c995c
-$orangeLight: #ccb43d
-$orangeDark: #cc793d
+﻿@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&subset=cyrillic,cyrillic-ext')
 
-$borderRadius: 3px
+// ЦВЕТА
+$dark: #1F271B
+$blue: #19647E
+$sea: #28AFB0
+$yellow: #F4D35E
+$orange: #EE964B
+
+$blueLight: #2D7289
+$seaLight: #3BB6B7
+$yellowLight: #F5D76C
+$orangeLight: #EF9F5B
+
+$borderRadius: 2px
 
 // ГРАДИЕНТ
 =gradient($light, $dark)
@@ -36,13 +42,22 @@ $borderRadius: 3px
   transition: $property $speed
 
 // ОБЩИЕ ПРАВИЛА
-*
+body
   margin: 0
 
-  font-family: "Open Sans Condensed", sans-serif
+  font-family: 'Fira Sans', sans-serif
 
 body > div
   min-width: 1024px
+
+a, a:link, a:visited
+  color: white
+
+a:link
+  text-decoration: none
+
+a:hover
+  text-decoration: underline
 
 // ЗАГОЛОВКИ
 h1
@@ -51,14 +66,14 @@ h1
   font-weight: 500
 
 h2
-  margin-bottom: 30px
+  margin-bottom: 64px
 
   color: white
   font-size: 36px
   font-weight: 400
 
 h3
-  margin-bottom: 20px
+  margin: 20px
 
   color: white
   font-size: 24px
@@ -67,25 +82,26 @@ h3
 // ГЛОБАЛЬНЫЕ ПРАВИЛА
 .wrapper
   margin: auto
-  padding: 50px 0 75px 0
+  padding: 32px 32px 96px
 
   width: 1024px
 
+  box-sizing: border-box
   text-align: center
 
   // КРУГИ С КАРТИНКАМИ
-  div
-    display: inline-block
+  .circle
+    float: left
 
-    margin-top: 45px
+    margin-bottom: 32px
 
-    width: 300px
+    width: 33.3333%
 
     text-align: center
 
     // ИЗОБРАЖЕНИЕ В КРУГАХ
     div
-      margin-top: 0
+      margin: auto
 
       height: 200px
       width: 200px
@@ -95,50 +111,58 @@ h3
       border-radius: 50%
 
       +shadow
-      +transition(box-shadow, 0.125s)
 
 // ШАПКА
 .header
   position: absolute
+  z-index: 2
 
   top: 0
   right: 0
   left: 0
 
-  height: 100px
+  height: 128px
 
   // ОБЁРТКА
   .wrapper
-    padding: 0
+    padding: 0 32px
 
     // ТЕЛЕФОН
     .logo
       float: left
 
-      margin: 25px 0 0 25px
+      margin: 44px 0
       padding: 0 10px
 
-      height: 50px
-
+      height: 40px
+      
       border-radius: $borderRadius
+      box-sizing: border-box
       color: white
-      font-size: 24px
-      line-height: 50px
+      cursor: pointer
+      font-size: 1.25em
+      line-height: 40px
+      transition: background-color 125ms ease, color 125ms ease
 
-      +gradient($purpleLight, $purpleDark)
+      +gradient($orange, $orangeLight)
+      +shadow
+
+    .logo:hover
+      background: white
+
+      a
+        color: $orange
 
     // МЕНЮ
     nav
       float: right
-
-      margin-right: 50px
 
       font-size: 24px
 
       // ССЫЛКИ
       a:link
         margin-right: 20px
-        line-height: 100px
+        line-height: 128px
 
         color: white
         font-size: 18px
@@ -155,27 +179,38 @@ h3
 
 // СЛАЙДЕР
 .slider
-  padding-top: 263px
+  position: relative
 
-  height: 640px
+  height: 768px
   width: 100%
 
-  background: url("../images/slider-one.jpg") top no-repeat fixed
+  background: url("../images/slider-three.jpg") center no-repeat fixed
   background-size: cover
   box-sizing: border-box
 
   // СЛОГАН
   .tag
+    position: absolute
+
+    margin-top: -51px
+
+    top: 50%
+    right: 0
+    left: 0
+
     color: white
     text-align: center
 
+    h2
+      margin: 0
+
 // СХЕМА
 .scheme
-  +gradient($purpleLight, $purpleDark)
+  +gradient($sea, $seaLight)
 
 // СХЕМА
 .services
-  +gradient($blueLight, $blueDark)
+  +gradient($blue, $blueLight)
 
 // КАТАЛОГ
 .catalogue
@@ -185,79 +220,85 @@ h3
 
   // ФОРМА
   .form
-    padding: 40px
+    margin: auto
+    padding: 32px
+
+    max-width: 384px
 
     background-color: white
-    border-radius: 3px
     text-align: center
 
-    +gradient($purpleLight, $purpleDark)
+    +shadow
+
+    h3, input
+      color: #1F271B
+
+    h3
+      margin-top: 0
 
     // ПОЛЕ ВВОДА
     input
       display: block
 
-      margin-bottom: 10px
-      padding: 10px
+      margin-bottom: 16px
+      padding: 12px
 
       width: 100%
 
-      font-size: 18px
-      border: none
-      border-radius: 3px
+      border: $sea 2px solid
+      border-radius: $borderRadius
       box-sizing: border-box
+      font-family: 'Fira Sans', sans-serif
+      font-size: 18px
+      transition: border-color 125ms ease
+
+    input:focus
+      border-color: $blue
+      outline: none
 
     input:last-of-type
       margin-bottom: 0
-
+      
+      border: 0
       color: white
 
-      +gradient($orangeDark, $orangeLight)
+      +gradient($orange, $orangeLight)
 
     input:last-of-type:hover
       cursor: pointer
 
 // КОНТАКТЫ
 .contacts
-  +gradient($orangeDark, $orangeLight)
+  color: white
 
-  // БЛОК
-  div
-    width: auto
-    color: white
+  +gradient($yellow, $yellowLight)
 
-  // ЗАГОЛОВОК
-  h1
-    text-align: center
+  a:link
+    text-decoration: underline
 
-  // КОНТАКТЫ
-  span, a
-    padding: 0 20px
+  a:hover
+    text-decoration: none
+
+  div.copyright
+    margin-top: 32px
+
+    font-size: 2em
+
+  span
+    margin-right: 16px
+    padding-right: 16px
 
     border-right: white thin solid
     font-size: 24px
 
-  a:link
-    color: white
-    text-decoration: none
-
-  a:hover
-    text-decoration: underline
-
-  a:visited
-    color: white
-
-  a:last-of-type
+  span:last-of-type
+    margin-right: 0
     padding-right: 0
 
     border-right: none
 
 // КНОПКА "ВВЕРХ"
 .up
-
-  // ТЕНЬ
-  +shadow
-
   display: none
 
   position: fixed
@@ -266,13 +307,18 @@ h3
   right: 50px
   bottom: 50px
 
-  height: 50px
+  min-height: 50px
   min-width: 50px
 
   background: white url("../images/up.svg")
   border-radius: 50%
   cursor: pointer
   opacity: 0.75
+  
+  +shadow
 
 .up:hover
   opacity: 1
+
+.clear
+  clear: both

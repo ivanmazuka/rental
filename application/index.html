@@ -5,7 +5,7 @@
     <title>Рентал — ваш выбор</title>
     <link rel="stylesheet" href="style/style.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="icon" href="favicon.ico">
     <script src="libs/jquery-3.1.0.min.js"></script>
     <script src="js/script.min.js"></script>
 </head>
@@ -14,7 +14,9 @@
 <!-- ШАПКА -->
 <div class="header">
     <div class="wrapper">
-        <span class="logo">+7 (3953) 28-77-47</span>
+        <span class="logo">
+            <a href="tel:+7 (3953) 28-77-47" target="_blank">+7 (3953) 28-77-47</a>
+        </span>
         <nav class="menu">
             <a href="#" name="scheme">схема работы</a>
             <a href="#" name="services">услуги</a>
@@ -36,78 +38,80 @@
 <!-- СХЕМА РАБОТЫ -->
 <div class="scheme">
     <div class="wrapper">
-        <h1>СХЕМА РАБОТЫ</h1>
+        <h1>Схема работы</h1>
         <h2>Наша компания работает по следующему принципу:</h2>
-        <div>
+        <div class="circle">
             <div style="background-image: url('images/step-one.jpg')"></div>
             <h3>Шаг 1: общение</h3>
         </div>
-        <div>
+        <div class="circle">
             <div style="background-image: url('images/step-two.jpg')"></div>
             <h3>Шаг 2: встреча</h3>
         </div>
-        <div>
+        <div class="circle">
             <div style="background-image: url('images/step-three.jpg')"></div>
             <h3>Шаг 3: оценка</h3>
         </div>
-        <div>
+        <div class="circle">
             <div style="background-image: url('images/step-four.jpg')"></div>
             <h3>Шаг 4: договор</h3>
         </div>
-        <div>
+        <div class="circle">
             <div style="background-image: url('images/step-five.jpg')"></div>
             <h3>Шаг 5: выполнение задачи</h3>
         </div>
-        <div>
+        <div class="circle">
             <div style="background-image: url('images/step-six.jpg')"></div>
             <h3>Шаг 6: сделка</h3>
         </div>
+        <div class="clear"></div>
     </div>
 </div>
 
 <!-- СХЕМА РАБОТЫ -->
 <div class="services">
     <div class="wrapper">
-        <h1>УСЛУГИ</h1>
+        <h1>Услуги</h1>
         <h2>Рентал предоставляет вам следующие услуги:</h2>
-        <div>
+        <div class="circle">
             <div style="background-image: url('images/service-one.jpg')"></div>
             <h3>Вторичное жильё</h3>
         </div>
-        <div>
+        <div class="circle">
             <div style="background-image: url('images/service-two.jpg')"></div>
             <h3>Первичное жильё</h3>
         </div>
-        <div>
+        <div class="circle">
             <div style="background-image: url('images/service-three.jpg')"></div>
             <h3>Обмен</h3>
         </div>
-        <div>
+        <div class="circle">
             <div style="background-image: url('images/service-four.jpg')"></div>
             <h3>Юридическое сопровождение</h3>
         </div>
-        <div>
+        <div class="circle">
             <div style="background-image: url('images/service-five.jpg')"></div>
             <h3>Консультации</h3>
         </div>
-        <div>
+        <div class="circle">
             <div style="background-image: url('images/service-six.jpg')"></div>
             <h3>Срочный выкуп</h3>
         </div>
+        <div class="clear"></div>
     </div>
 </div>
 
 <!-- КАТАЛОГ -->
 <div class="catalogue">
     <div class="wrapper">
-        <h1>КАТАЛОГ</h1>
+        <h1>Каталог</h1>
         <div class="form">
             <h3>Заполните форму и мы пришлём наш каталог на Ваш почтовый ящик!</h3>
             <form class="catalogue-form">
                 <input name="email" class="email" type="email" placeholder="Введите Ваш e-mail:" required>
                 <input name="name" class="name" placeholder="Введите Ваше имя" required>
                 <input name="phone" class="phone" type="tel" placeholder="Введите Ваш телефон:" required>
-                <input type="submit" class="catalogue-send" value="ОТПРАВИТЬ">
+                <input type="submit" class="catalogue-send" value="Отправить">
             </form>
         </div>
     </div>
@@ -116,17 +120,33 @@
 <!-- КОНТАКТЫ -->
 <div class="contacts">
     <div class="wrapper">
-        <h1>КОНТАКТЫ</h1>
+        <h1>Контакты</h1>
         <div>
-            <span>Телефон: +7 (3953) 28-77-47</span>
-            <span>Email: rental-bratsk@mail.ru</span>
-            <a href="#">ВКонтакте</a>
-            <a href="#">Facebook</a>
-            <h3><a href="https://polymorphy.ru/">#polymorphy</a> © 2017</h3>
+
+            <span>
+                Телефон: <a href="tel:+7 (3953) 28-77-47" target="_blank">+7 (3953) 28-77-47</a>
+            </span>
+
+            <span>
+                Email: <a href="mailto:rental-bratsk@mail.ru" target="_blank">rental-bratsk@mail.ru</a>
+            </span>
+
+            <span>
+                <a href="#" target="_blank">ВКонтакте</a>
+            </span>
+
+            <span>
+                <a href="#" target="_blank">Facebook</a>
+            </span>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <a href="https://polymorphy.ru/" target="_blank">Polymorphy</a> © 2017
+            </div>
+
         </div>
     </div>
-    <iframe frameborder="no" style="border: 1px solid #a3a3a3; box-sizing: border-box;" width="100%" height="600"
-            src="http://widgets.2gis.com/widget?type=firmsonmap&amp;options=%7B%22pos%22%3A%7B%22lat%22%3A56.14964941790912%2C%22lon%22%3A101.62409305572511%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22bratsk%22%7D%2C%22org%22%3A%227178140187099815%22%7D"></iframe>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A42063b4b9986b714622660d4045a2aba72c14ec031f3e12ea2899742ddef8ba7&amp;width=100%25&amp;height=512&amp;lang=ru_RU&amp;scroll=false"></script>
 </div>
 
 <!-- КНОПКА "ВВЕРХ" -->
