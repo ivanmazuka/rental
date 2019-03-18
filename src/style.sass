@@ -1,47 +1,9 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&subset=cyrillic,cyrillic-ext')
+﻿// Imports
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&subset=cyrillic,cyrillic-ext')
+@import "colors"
+@import "mixins"
 
-// ЦВЕТА
-$dark: #1F271B
-$blue: #19647E
-$sea: #28AFB0
-$yellow: #F4D35E
-$orange: #EE964B
-
-$blueLight: #2D7289
-$seaLight: #3BB6B7
-$yellowLight: #F5D76C
-$orangeLight: #EF9F5B
-
-$borderRadius: 2px
-
-// ГРАДИЕНТ
-=gradient($light, $dark)
-  background: $light
-  background: -moz-linear-gradient(left, $light 0%, $dark 100%)
-  background: -webkit-linear-gradient(left, $light 0%, $dark 100%)
-  background: linear-gradient(to right, $light 0%, $dark 100%)
-
-// ТЕНЬ
-=shadow
-  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.125)
-  -moz-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.125)
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.125)
-
-// ТЕНЬ ПРИ НАВЕДЕНИИ
-=shadow-hover
-  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25)
-  -moz-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25)
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25)
-
-// TRANSITION
-=transition($property, $speed)
-  -webkit-transition: $property $speed
-  -moz-transition: $property $speed
-  -ms-transition: $property $speed
-  -o-transition: $property $speed
-  transition: $property $speed
-
-// ОБЩИЕ ПРАВИЛА
+// Common rules
 body
   margin: 0
 
@@ -59,7 +21,7 @@ a:link
 a:hover
   text-decoration: underline
 
-// ЗАГОЛОВКИ
+// Headings
 h1, h2
   color: white
 
@@ -73,6 +35,7 @@ h3
   font-size: 36px
   font-weight: 400
 
+// Text description (steps, schema, etc.)
 .description
   margin: 20px
 
@@ -80,7 +43,7 @@ h3
   font-size: 24px
   font-weight: 300
 
-// ГЛОБАЛЬНЫЕ ПРАВИЛА
+// MAin rules
 .wrapper
   margin: auto
   padding: 32px 32px 96px
@@ -91,12 +54,13 @@ h3
   box-sizing: border-box
   text-align: center
 
+  // Circles wrapper
   .circles
     display: flex
 
     flex-wrap: wrap
 
-  // КРУГИ С КАРТИНКАМИ
+  // Circle
   .circle
     margin-bottom: 32px
 
@@ -104,7 +68,7 @@ h3
 
     text-align: center
 
-    // ИЗОБРАЖЕНИЕ В КРУГАХ
+    // Circle image
     div:not(.description)
       margin: auto
 
@@ -122,7 +86,7 @@ h3
   h2
     font-size: 48px
 
-// ШАПКА
+// Header
 .header
   position: absolute
   z-index: 2
@@ -133,11 +97,11 @@ h3
 
   height: 128px
 
-  // ОБЁРТКА
+  // Wrapper
   .wrapper
     padding: 0 32px
 
-    // ТЕЛЕФОН
+    // Phone button
     .logo
       float: left
 
@@ -163,13 +127,13 @@ h3
       a
         color: $orange
 
-    // МЕНЮ
+    // Menu
     nav
       float: right
 
       font-size: 24px
 
-      // ССЫЛКИ
+      // Links
       a:link
         margin-right: 20px
         line-height: 128px
@@ -187,7 +151,7 @@ h3
       a:visited
         color: white
 
-// СЛАЙДЕР
+// Slider (not actually)
 .slider
   position: relative
 
@@ -198,39 +162,42 @@ h3
   background-size: cover
   box-sizing: border-box
 
-  // СЛОГАН
+  // Tagline
   .tag
     position: absolute
 
-    margin-top: -51px
+    margin: -51px auto auto
+    padding: 0 16px 0
 
     top: 50%
     right: 0
     left: 0
 
+    max-width: 1024px
+
     color: white
     text-align: center
 
+    // Sub writing
     h2
       margin: 0
 
       font-weight: normal
 
-// СХЕМА
+// Schema
 .scheme
   +gradient($sea, $seaLight)
 
-// СХЕМА
+// Services
 .services
   +gradient($blue, $blueLight)
 
-// КАТАЛОГ
+// Catalogue
 .catalogue
-  background: url("images/catalogue.jpg") center
-  background-attachment: fixed
+  background: url("images/catalogue.jpg") fixed center
   background-size: cover
 
-  // ФОРМА
+  // Catalogue form
   .form
     margin: auto
     padding: 32px
@@ -246,7 +213,6 @@ h3
     h3
       margin-top: 0
 
-    // ПОЛЕ ВВОДА
     input
       display: block
 
@@ -284,7 +250,7 @@ h3
 
     +shadow
 
-// КОНТАКТЫ
+// Contacts
 .contacts
   color: white
 
@@ -314,7 +280,7 @@ h3
 
     border-right: none
 
-// КНОПКА "ВВЕРХ"
+// "Up" button
 .up
   display: none
 
@@ -340,13 +306,18 @@ h3
 .clear
   clear: both
 
+// Responsive
 @media (max-width: 768px)
+
+  // Hiding the menu (for now)
   .header .menu
     display: none
 
+  // Fixing backgrounds
   .slider, .catalogue
     background-attachment: scroll
 
+  // Vertically aligning the tagline
   .slider
     display: flex
 
@@ -359,12 +330,14 @@ h3
 
       top: auto
 
+  // Shrinking the wrapper
   .wrapper
     padding: 16px 16px 48px
 
     .circle
       width: 50%
 
+  // Replacing the contacts
   .contacts span
     display: block
 
@@ -383,3 +356,6 @@ h3
   .wrapper
     .circle
       width: 100%
+
+  .slider .tag h2
+    font-size: 24px

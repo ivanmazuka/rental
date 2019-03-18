@@ -1,0 +1,26 @@
+// Gradient
+=gradient($light, $dark)
+  background: $light
+  background: -moz-linear-gradient(left, $light 0%, $dark 100%)
+  background: -webkit-linear-gradient(left, $light 0%, $dark 100%)
+  background: linear-gradient(to right, $light 0%, $dark 100%)
+
+// Shadow
+=shadow
+  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.125)
+  -moz-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.125)
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.125)
+
+// Hover shadow
+=shadow-hover
+  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25)
+  -moz-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25)
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25)
+
+// Transition
+=transition($property, $speed)
+  -webkit-transition: $property $speed
+  -moz-transition: $property $speed
+  -ms-transition: $property $speed
+  -o-transition: $property $speed
+  transition: $property $speed
