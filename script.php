@@ -35,7 +35,7 @@ if (empty($errors)) {
     $message = "Имя: {$name}\nПочта: {$email}\nТелефон: {phone}";
 
     try {
-        mail('ivan.mazuka@yandex.ru', 'Заказ каталога с сайта Рентал', $message);
+        mail('matcuka@polymorphy.ru', 'Заказ каталога с сайта Рентал', $message);
         echo 'Ваше сообщение отправлено!';
     } catch (Exception $exception) {
         echo 'Произошла ошибка!';

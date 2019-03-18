@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-// ПРОВЕРКА СКРОЛЛА
+// Scroll check
 function checkOffset() {
   if (pageYOffset > 0) {
     $('.up').fadeIn(125);
@@ -11,40 +11,43 @@ function checkOffset() {
 
 $(document).ready(function () {
 
-  // НАВЕРХ
-  $('.up').on('click', function () {
+  // Up!
+  $('.up').on('click', () => {
     $('html, body').animate({
       scrollTop: 0
     }, 500);
   });
 
-  // ВЫЗОВ ФУНКЦИИ ПРИ СКРОЛЛЕ
-  $(window).scroll(function () {
-    checkOffset();
-  });
+  // Onscroll
+  $(window).scroll(checkOffset);
 
-  // СКРОЛЛ К МАЯКУ
+  // Smooth scroll
   $('nav').find('a').on('click', function () {
-    var destination = $(this).attr('name');
+    const destination = $(this).attr('name');
+
     $('html, body').animate({
       scrollTop: $('.' + destination).offset().top
     }, 500);
   });
 
-  // ОТПРАВКА ПИСЕМ
-  $('.catalogue-form').on('submit', function (event) {
+  // Sending mails
+  $('.catalogue-form').on('submit', (event) => {
     event.preventDefault();
+
     $('.catalogue-send').val('Отправка...');
-    var email = $('.email').val();
-    var name = $('.name').val();
-    var phone = $('.phone').val();
+
+    const email = $('.email').val();
+    const name = $('.name').val();
+    const phone = $('.phone').val();
+
+    // Sending an AJAX request
     $.ajax({
       method: 'POST',
-      url: 'php/script.php',
+      url: 'script.php',
       data: { email: email, name: name, phone: phone }
-    }).done(function (result) {
+    }).done((result) => {
       $('.catalogue-send').val(result);
-    }).fail(function () {
+    }).fail(() => {
       $('.catalogue-send').val('Ошибка!');
     });
   });

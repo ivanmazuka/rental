@@ -48,7 +48,7 @@ body
   font-family: 'Fira Sans', sans-serif
 
 body > div
-  min-width: 1024px
+  width: 100%
 
 a, a:link, a:visited
   color: white
@@ -60,19 +60,20 @@ a:hover
   text-decoration: underline
 
 // ЗАГОЛОВКИ
-h1
+h1, h2
   color: white
+
   font-size: 48px
   font-weight: 500
 
-h2
+h3
   margin-bottom: 64px
 
   color: white
   font-size: 36px
   font-weight: 400
 
-h3
+.description
   margin: 20px
 
   color: white
@@ -84,15 +85,19 @@ h3
   margin: auto
   padding: 32px 32px 96px
 
-  width: 1024px
+  max-width: 1024px
+  width: 100%
 
   box-sizing: border-box
   text-align: center
 
+  .circles
+    display: flex
+
+    flex-wrap: wrap
+
   // КРУГИ С КАРТИНКАМИ
   .circle
-    float: left
-
     margin-bottom: 32px
 
     width: 33.3333%
@@ -100,7 +105,7 @@ h3
     text-align: center
 
     // ИЗОБРАЖЕНИЕ В КРУГАХ
-    div
+    div:not(.description)
       margin: auto
 
       height: 200px
@@ -111,6 +116,11 @@ h3
       border-radius: 50%
 
       +shadow
+
+// Common class for all wrapping blocks
+.block
+  h2
+    font-size: 48px
 
 // ШАПКА
 .header
@@ -135,7 +145,7 @@ h3
       padding: 0 10px
 
       height: 40px
-      
+
       border-radius: $borderRadius
       box-sizing: border-box
       color: white
@@ -184,7 +194,7 @@ h3
   height: 768px
   width: 100%
 
-  background: url("../images/slider-three.jpg") center no-repeat fixed
+  background: url("images/slider-three.jpg") center no-repeat fixed
   background-size: cover
   box-sizing: border-box
 
@@ -204,6 +214,8 @@ h3
     h2
       margin: 0
 
+      font-weight: normal
+
 // СХЕМА
 .scheme
   +gradient($sea, $seaLight)
@@ -214,7 +226,7 @@ h3
 
 // КАТАЛОГ
 .catalogue
-  background: url("../images/catalogue.jpg") center
+  background: url("images/catalogue.jpg") center
   background-attachment: fixed
   background-size: cover
 
@@ -227,8 +239,6 @@ h3
 
     background-color: white
     text-align: center
-
-    +shadow
 
     h3, input
       color: #1F271B
@@ -258,7 +268,7 @@ h3
 
     input:last-of-type
       margin-bottom: 0
-      
+
       border: 0
       color: white
 
@@ -266,6 +276,13 @@ h3
 
     input:last-of-type:hover
       cursor: pointer
+
+    .description
+      margin: 0 0 1em
+
+      color: $dark
+
+    +shadow
 
 // КОНТАКТЫ
 .contacts
@@ -307,14 +324,14 @@ h3
   right: 50px
   bottom: 50px
 
-  min-height: 50px
-  min-width: 50px
+  height: 50px
+  width: 50px
 
-  background: white url("../images/up.svg")
+  background: white url("images/up.svg")
   border-radius: 50%
   cursor: pointer
   opacity: 0.75
-  
+
   +shadow
 
 .up:hover
@@ -322,3 +339,47 @@ h3
 
 .clear
   clear: both
+
+@media (max-width: 768px)
+  .header
+    display: none
+
+  .slider, .catalogue
+    background-attachment: scroll
+
+  .slider
+    display: flex
+
+    align-items: center
+
+    height: 512px
+
+    .tag
+      margin-top: auto
+
+      top: auto
+
+  .wrapper
+    padding: 16px 16px 48px
+
+    .circle
+      width: 50%
+
+  .contacts span
+    display: block
+
+    margin: auto
+    padding: auto
+
+    border: none
+
+  h2
+    font-size: 36px
+
+  h3
+    font-size: 24px
+
+@media (max-width: 640px)
+  .wrapper
+    .circle
+      width: 100%

@@ -2,7 +2,7 @@
   "name": "rental",
   "version": "1.0.0",
   "description": "Сайт риэлторской компании из Братска",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,20 +13,25 @@
   "author": "Ivan Matcuka",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
     "colors.css": "^3.0.0",
-    "gulp-cssmin": "^0.1.7",
+    "gulp-cssmin": "^0.2.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^5.0.3",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.1",
     "gulp-watch": "^5.0.1",
+    "webpack": "^4.29.5",
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
     "del": "^2.2.2",
     "gulp-dependency-install": "0.0.8",
     "gulp-install": "^0.6.0",
+    "gulp-minify": "^3.1.0",
     "gulp-uglifyjs": "^0.6.2",
     "jquery": "^3.3.1",
     "natives": "^1.1.6"
