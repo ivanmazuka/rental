@@ -252,11 +252,14 @@ h3
 
 // Contacts
 .contacts
-  color: white
+  color: $dark
 
   +gradient($yellow, $yellowLight)
 
-  a:link
+  a, h2
+    color: inherit
+
+  a
     text-decoration: underline
 
   a:hover
@@ -271,7 +274,7 @@ h3
     margin-right: 16px
     padding-right: 16px
 
-    border-right: white thin solid
+    border-right: $dark thin solid
     font-size: 24px
 
   span:last-of-type
